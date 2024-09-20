@@ -1,10 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
+      <main className={styles.main} style={{ marginTop: -70 }}>
         <Image
           className={styles.logo}
           src="https://nextjs.org/icons/next.svg"
@@ -13,20 +14,12 @@ export default function Home() {
           height={38}
           priority
         />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        <p>
+          此页面为<code>https://pdf.ai/tools/rotate-pdf</code>的复刻页面入口
+        </p>
 
         <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link className={styles.primary} href="/tools/rotate-pdf" rel="noopener noreferrer">
             <Image
               className={styles.logo}
               src="https://nextjs.org/icons/vercel.svg"
@@ -34,19 +27,18 @@ export default function Home() {
               width={20}
               height={20}
             />
-            Deploy now
-          </a>
+            点击访问
+          </Link> 
           <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            href="https://pdf.ai/tools/rotate-pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
+            className={styles.secondary}>
+            查看原网站
           </a>
         </div>
       </main>
-      <footer className={styles.footer}>
+      {/* <footer className={styles.footer}>
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           target="_blank"
@@ -89,7 +81,7 @@ export default function Home() {
           />
           Go to nextjs.org →
         </a>
-      </footer>
+      </footer> */}
     </div>
   );
 }

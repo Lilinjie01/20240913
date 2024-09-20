@@ -1,6 +1,7 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: rgb(247, 245, 238);
+  --foreground: #000000;
+  --sans: Inter, Segoe UI, Helvetica Neue, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -8,6 +9,25 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+@media (min-width: 769px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+html {
+  line-height: 1.5;
 }
 
 html,
@@ -19,9 +39,11 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: var(--font-inter-medium);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: inherit;
 }
 
 * {
@@ -40,3 +62,16 @@ a {
     color-scheme: dark;
   }
 }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
